@@ -18,7 +18,7 @@ namespace TetrisGame.Infrastructure
             var currentPositions = currentTetromino.GetAbsolutePositions();
             
             // Draw border and board
-            Console.WriteLine("╔════════════════╗    ╔════════╗");
+            Console.WriteLine("╔══════════════════════╗    ╔═══════╗");
             
             for (int i = 0; i < board.Height; i++)
             {
@@ -59,7 +59,7 @@ namespace TetrisGame.Infrastructure
                 }
                 else if (i == 8)
                 {
-                    Console.Write(" ║    ╚════════╝");
+                    Console.Write(" ║    ╚═══════╝");
                 }
                 else if (i == 10)
                 {
@@ -81,11 +81,11 @@ namespace TetrisGame.Infrastructure
                 Console.WriteLine();
             }
             
-            Console.WriteLine("╚════════════════╝");
+            Console.WriteLine("╚══════════════════════╝");
             
             // Draw controls
             Console.WriteLine("Controls:");
-            Console.WriteLine("← → : Move   ↑ : Rotate   ↓ : Soft Drop   Space : Hard Drop   Q : Quit");
+            Console.WriteLine("<- -> : Move   ^ : Rotate   ↓ : Soft Drop   Space : Hard Drop   Q : Quit");
         }
         
         private void RenderNextPieceRow(int row, Tetromino nextTetromino)

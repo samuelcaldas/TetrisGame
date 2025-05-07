@@ -23,25 +23,26 @@ namespace TetrisGame
             // Setup dependencies
             var renderer = new ConsoleRenderer();
             var environment = new TetrisEnvironment(10, 20, null, renderer);
+            GameEngine gameEngine;
             
             switch (choice)
             {
                 case "1":
                     var inputHandler = new KeyboardInputHandler();
-                    var humanGameEngine = new GameEngine(environment, inputHandler);
-                    humanGameEngine.PlayHuman();
+                    gameEngine = new HumanGameEngine(environment, inputHandler);
                     break;
                     
                 case "2":
                     var agent = new RandomAgent();
-                    var aiGameEngine = new GameEngine(environment, new KeyboardInputHandler());
-                    aiGameEngine.PlayAgent(agent, true);
+                    gameEngine = new AgentGameEngine(environment, agent, true);
                     break;
                     
                 default:
                     Console.WriteLine("Invalid choice. Exiting.");
-                    break;
+                    return;
             }
+            
+            gameEngine.Play();
         }
     }
 }

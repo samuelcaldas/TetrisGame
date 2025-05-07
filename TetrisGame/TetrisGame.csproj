@@ -45,7 +45,9 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TetrisGame.Application\AgentGameEngine.cs" />
     <Compile Include="TetrisGame.Application\GameEngine.cs" />
+    <Compile Include="TetrisGame.Application\HumanGameEngine.cs" />
     <Compile Include="TetrisGame.Application\IEnvironment.cs" />
     <Compile Include="TetrisGame.Application\TetrisEnvironment.cs" />
     <Compile Include="TetrisGame.Domain\Action.cs" />
